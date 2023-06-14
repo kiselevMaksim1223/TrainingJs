@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const chunk = function (arr, size) {
+            const resArr = []
+            let arrLength = arr.length
+            let count = arr.length / size
+            if (arrLength === 0) {
+               return resArr
+            }
+            for (let i = 0; i < count; i++) {
+                
+                if (arrLength >= size) {
+                    const temp = arr.splice(0, size)
+                    resArr.push(temp)
+                } else {
+                    const temp = arr.splice(0, arrLength)
+                    resArr.push(temp)
+                }
+                arrLength--
+            }
+            return resArr
+        }
+
+        const arr = []
+        const size = 1
+        console.log(chunk(arr, size)) //[[1,9,6],[3,2]]
+
+    </script>
+</body>
+
+</html>

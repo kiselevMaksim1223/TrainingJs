@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const removeElement = function (nums, val) {
+            for (let i = 0; i < nums.length; i++) {
+                if (val === nums[i] && val === nums[i+1]) {
+                    nums.splice(i, 2)
+                }
+                if (val === nums[i]) {
+                    nums.splice(i, 1)
+                }
+            }
+            return nums
+
+        };
+
+        const nums = [0, 1, 2, 2, 3, 0, 4, 2, 2] //[0,1,4,0,3,_,_,_]
+        // const nums = [0, 3, 2, 1, 3, 3]
+        // const nums = [3,2,2,3]
+        const val = 2
+
+        console.log(removeElement(nums, val))
+
+    </script>
+
+
+</body>
+
+</html>

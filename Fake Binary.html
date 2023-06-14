@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fakeBin(x){
+        let arr= [];
+        for (let i=0; i<x.length; i++){ 
+            if (x[i] < 5) { 
+                arr.push("0");
+            } else if ((x[i] >= 5)) { 
+                arr.push("1");
+            }
+        }
+        return arr.join("");
+}
+    </script>
+</body>
+</html>

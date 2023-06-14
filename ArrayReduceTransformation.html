@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const reduce = function (nums, fn, init) {
+            let res = init
+            for (let i = 0; i < nums.length; i++) {
+                res = fn(res, nums[i])
+            }
+            return res
+        };
+
+        const nums = [1, 2, 3, 4]
+        const fn = function sum(accum, curr) { return accum + curr * curr; }
+        const init = 100
+        console.log(reduce(nums, fn, init));
+    </script>
+</body>
+
+</html>

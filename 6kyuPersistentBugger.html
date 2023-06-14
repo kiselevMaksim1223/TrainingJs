@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function persistence(num) {
+
+   let arr = num.toString().split("")
+   let i = 0
+   if(arr.length === 1){return 0}
+   else {
+   while(arr.length > 1){
+       arr = arr.reduce((acc, cur) =>{
+        console.log(cur) 
+        return (acc * cur)
+           
+    }, 1).toString().split("")
+    i++
+    }   
+}
+   return i
+}
+    </script>
+</body>
+</html>

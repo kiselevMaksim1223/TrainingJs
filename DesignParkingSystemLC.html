@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const ParkingSystem = function (big, medium, small) {
+            this.big = big
+            this.medium = medium
+            this.small = small
+        };
+
+
+        ParkingSystem.prototype.addCar = function (carType) {
+            if (carType === 1) {
+                if (this.big === 0) return false
+                this.big -= 1
+                return true
+            }
+
+            if (carType === 2) {
+                if (this.medium === 0) return false
+                this.medium -= 1
+                return true
+            }
+
+            if (carType === 3) {
+                if (this.small === 0) return false
+                this.small -= 1
+                return true
+            }
+        };
+
+        const obj = new ParkingSystem(0, 1, 1)
+        const param_1 = obj.addCar(1)
+        const param_2 = obj.addCar(2)
+        const param_3 = obj.addCar(2)
+        console.log(param_1);
+        console.log(param_2);
+        console.log(param_3);
+    </script>
+</body>
+
+</html>

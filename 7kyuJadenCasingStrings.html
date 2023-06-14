@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        String.prototype.toJadenCase = function () {
+            //...
+
+            
+            s = this.split('')
+            for (let i = 0; i < s.length; i++){
+                s[0] = s[0].toUpperCase()
+                if (s[i] === " "){
+                   s[i+1]=s[i+1].toUpperCase()
+                }
+            } return s.join('')
+
+
+            // .map((fs, index) => {
+            // if (fs === " "){
+            //     fs
+            // }}
+            // )
+            // return this.split("").map((fs,index) => {
+            //         if (fs === " ") { 
+            //             fs(index+1) = fs(index+1).ToUpperCase()
+            //         }
+                
+            // })
+        }
+            // console.log(str.toJadenCase() + "sdad a");
+
+    </script>
+</body>
+
+</html>

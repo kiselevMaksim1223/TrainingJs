@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* function abbrevName(name){
+let abb = [];
+for (let i =0; i < name.length; i++) {
+ if (name[i] === name[i].toUpperCase() && name[i]!= " " && name[i]!= "."){
+   abb.push(name[i]);
+ } 
+}
+return abb.join('.');
+}*/
+    function abbrevName(name) {
+      let arr = name.split(" ");
+      let abb = arr[0][0].toUpperCase() + "." + arr[1][0].toUpperCase();
+      //return name.match(/[A-Z]/g).join('.');
+      /*for (let i = 0; i < name.length; i++) {
+        if (name[i].match(/[A-Z]/g)) {
+          arr.push(name[i]);
+        }
+      }
+      return arr.join('.');*/
+      return abb;
+    }
+
+  </script>
+</body>
+
+</html>

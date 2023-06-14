@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        let removeDuplicates = function (nums) {
+            let k = 0
+            // let newArr
+            const maxEl = Math.max(...nums)          
+            for (let i = 0; i < nums.length; i++){
+                nums[i] === nums[i+1] ? delete nums[i] : nums[i]
+            }
+            return maxEl
+        };
+        const nums = [1,1,2]
+        console.log(removeDuplicates(nums));
+    </script>
+</body>
+
+</html>
