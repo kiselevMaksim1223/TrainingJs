@@ -11,7 +11,11 @@ class EventEmitter {
 
       return {
           unsubscribe: () => {
-            this.subStorage[event][0] = undefined
+            const callbacks = this.subStorage[event]
+            if(callbacks){
+                const cbIndex = callbacks.indexOf(cb)
+                this.subStorage[event].splice(cbIndex, 1)
+            }
           }
       };
     }
@@ -22,14 +26,11 @@ class EventEmitter {
             return []
         } else {
         for (let i = 0; i < this.subStorage[event].length; i++) {
+            if (this.subStorage[event][i] === undefined) continue
             this.res.push(this.subStorage[event][i](...args))
         }
         return this.res
     }
-    }
-
-    getRes() {
-        return this.subStorage
     }
   }
 
@@ -51,6 +52,7 @@ const sub1 = emit.subscribe("firstEvent", x => x + 1);
 const sub2 = emit.subscribe("firstEvent", x => x + 2);
 console.log(emit.getRes());
 // sub1.unsubscribe(); // undefined
-sub2.unsubscribe(); 
+console.log(sub1.unsubscribe());
+// console.log(sub2.unsubscribe());
 console.log(emit.getRes());
 console.log(emit.emit("firstEvent", [5])); // [7]
